@@ -1,0 +1,87 @@
+.homepage-container {
+    text-align: center;
+    color: white; /* Ensuring text is white for visibility */
+  }
+  
+  .homepage-header {
+    background-image: url("/images/bg1.webp"); /* Using bg1.webp as the background image */
+    background-size: cover;
+    background-position: center;
+    padding: 80px 0; /* Increased padding for more space around the text */
+    position: relative; /* To position text and brush effect correctly */
+  }
+  
+  .homepage-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #070707; /* Dark overlay for contrast */
+    opacity: 0.6; /* Adjusted opacity for visibility */
+    z-index: 5; /* Ensure it's behind the text */
+  }
+  
+  .homepage-header h1 {
+    font-size: 3em; /* Larger text */
+    position: relative; /* Bring the text above the brush stroke */
+    padding: 20px; /* Add padding to the text background */
+    border-radius: 10px; /* Rounded corners */
+    display: inline-block; /* Ensures the background only wraps around the text */
+    z-index: 10; /* Ensure text is on top */
+  }
+  
+  .homepage-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .homepage-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    margin: 20px;
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .homepage-card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card */
+    box-shadow: 0 8px 16px rgb(6, 241, 108); /* Add a deeper shadow */
+  }
+  
+  .homepage-card-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .homepage-card-title {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: black;
+  }
+  
+  .homepage-card-description {
+    font-size: 1em;
+    color: #555;
+  }
+  
+  .homepage-footer {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #333;
+    color: rgb(255, 255, 255);
+    text-align: center;
+  }
+  
+  .homepage-footer p {
+    margin: 5px 0;
+  }
+  

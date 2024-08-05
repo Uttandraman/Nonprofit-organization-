@@ -1,0 +1,84 @@
+.donation-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+}
+
+.amount-selection {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.preset-amounts button {
+    margin: 5px 0;
+    padding: 10px;
+    background-color: #f0ad4e;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #fff;
+    margin-left: 5px;
+}
+
+.payment-method label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.personal-info, .credit-card-info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.name-fields, .card-fields {
+    display: flex;
+    justify-content: space-between;
+}
+
+.name-fields div, .card-fields div {
+    width: 48%;
+}
+
+.personal-info div, .credit-card-info div {
+    margin-bottom: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"], input[type="number"], input[type="email"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 100%;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+.donation-total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.donate-button {
+    padding: 10px 20px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.donate-button:hover {
+    background-color: #4cae4c;
+}

@@ -1,0 +1,102 @@
+.get-involved-page {
+    text-align: center;
+    color: white; /* Ensuring text is white for visibility */
+  }
+  
+  .get-involved-header {
+    background-image: url("/images/getinvl2.jpg"); /* Corrected background image path */
+    background-size: cover; /* Ensures the background covers the header */
+    background-position: center center; /* Centers the background image */
+    background-attachment: fixed; /* Makes the background stay fixed during scroll */
+    padding: 80px 0; /* Provides ample space around the text */
+    position: relative; /* Necessary for positioning the pseudo-element */
+  }
+  
+  .get-involved-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #070707; /* Dark overlay for contrast */
+    opacity: 0.6; /* Adjusted opacity for visibility */
+    z-index: 5; /* Ensure it's behind the text */
+  }
+  
+  .get-involved-header h1 {
+    font-size: 3em; /* Large font size for emphasis */
+    position: relative; /* To layer the text above the pseudo-element */
+    padding: 20px; /* Padding to create a distinct block around the text */
+    border-radius: 10px; /* Rounded corners for a softer appearance */
+    display: inline-block; /* To restrict background size around the text */
+    z-index: 10; /* Ensures text is above the pseudo-element */
+  }
+  
+  .get-involved-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px; /* Space between cards */
+    padding: 20px; /* Padding around the container */
+  }
+  
+  .get-involved-card {
+    background-color: #ffffff; /* White background for cards */
+    border-radius: 8px; /* Rounded corners for cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for 3D effect */
+    width: 250px; /* Uniform width for all cards */
+    margin: 20px; /* Margin around cards */
+    padding: 20px; /* Padding inside cards */
+    text-align: left; /* Text aligned to the left */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover effects */
+  }
+  
+  .get-involved-card:hover {
+    transform: scale(1.05); /* Scale up on hover */
+    box-shadow: 0 8px 16px rgb(11, 56, 19); /* More pronounced shadow on hover */
+  }
+  
+  .get-involved-card-image {
+    width: 100%; /* Full width of the card */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners for images */
+  }
+  
+  .get-involved-card-title {
+    font-size: 1.5em; /* Larger font size for titles */
+    margin: 10px 0; /* Margin above and below the title */
+    color: black; /* Black color for text */
+  }
+  
+  .get-involved-card-description {
+    font-size: 1em; /* Standard font size for description */
+    color: #555; /* Dark grey color for text */
+  }
+  
+  .get-involved-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4caf50; /* Green background color */
+    color: white; /* White text color */
+    text-decoration: none; /* Remove underline from links */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .get-involved-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
+  .get-involved-footer {
+    margin-top: 40px; /* Space above footer */
+    padding: 20px; /* Padding inside footer */
+    background-color: #333; /* Dark background for footer */
+    color: white; /* White text for contrast */
+    text-align: center; /* Center-aligned text */
+  }
+  
+  .get-involved-footer p {
+    margin: 5px 0; /* Margin around paragraphs to separate them slightly */
+  }
+  
