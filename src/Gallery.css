@@ -1,0 +1,327 @@
+.combined-page {
+  /* padding: 20px; */
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  
+}
+.gl-gallery-j1 {
+  font-family: cursive;
+  font-size: 48px;
+  /* margin-bottom: 20px; */
+  transition: transform 0.3s ease;
+}
+
+.gl-gallery-s1 {
+  color: rgba(10, 248, 77, 0.74);
+  transition: color 0.3s ease;
+}
+
+.gl-gallery-hero {
+  background: url("https://img.freepik.com/premium-photo/school-children-running-down-street-their-uniforms-with-text-overlay-that-reads-what-is-your-child-s-education_197463-12547.jpg") ;
+  background-size: cover;
+  color: #fafff9;
+  text-align: center;
+  padding: 80px 0;
+  position: relative;
+  height: 600px;
+  font-family: cursive;
+  font-size: 48px;
+  margin-bottom: 20px;
+  padding-top: 50px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.gl-gallery-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(65, 64, 64, 0.5);
+}
+
+.gl-gallery-hero-content {
+  position: relative;
+  z-index: 1;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.gl-gallery-hero h1 {
+  margin: 0;
+  font-size: 48px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+  padding-top: 250px;
+}
+
+.gl-gallery-hero p {
+  margin: 10px 0 0;
+  font-size: 30px;
+  transition: opacity 0.3s ease;
+}
+
+.gl-gallery-section, .blog-section {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.gl-gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.gl-gallery-image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  cursor: pointer;
+  /* border-radius: 5px; */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  margin-left: 30px;
+}
+
+.gl-gallery-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gl-gallery-modal-image {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+
+ .bl-blog-post {
+    display: flex;
+    background-color: white;
+    /* border-radius: 8px; */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    
+  }
+  .bl-blog-title{
+    margin-left: 200px;
+  }
+  .bl-blog-image {
+    width: 600px;
+    object-fit: cover;
+    height: 400px;
+    margin-left: 10px;
+  }
+  
+  .bl-blog-content {
+    padding: 20px;
+    flex: 1;
+  }
+  
+  .bl-blog-date {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .bl-date-box {
+    background-color: orange;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-align: center;
+    margin-right: 10px;
+  }
+  
+  .bl-date-day {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .date-month {
+    font-size: 12px;
+  }
+ 
+  
+  .bl-blog-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .bl-blog-description {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 15px;
+  }
+  
+ 
+  
+  .bl-blog-tags a {
+    color: orange;
+    text-decoration: none;
+  }
+  
+  .bl-blog-tags a:hover {
+    text-decoration: underline;
+  }
+
+  /* Media Query for Tablet Screens (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .gl-gallery-hero {
+    height: 400px;
+    font-size: 36px;
+  }
+
+  .gl-gallery-hero h1 {
+    font-size: 36px;
+    padding-top: 150px;
+  }
+
+  .gl-gallery-hero p {
+    font-size: 24px;
+  }
+
+  .gl-gallery-image {
+    width: 200px;
+    height: 200px;
+    margin-left: 10px;
+  }
+
+  .bl-blog-post {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bl-blog-image {
+    width: 100%;
+    height: 250px;
+    margin-left: 0;
+  }
+
+  .bl-blog-title {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .bl-blog-content {
+    padding: 10px;
+  }
+
+  .bl-date-box {
+    padding: 5px;
+    font-size: 14px;
+  }
+}
+
+/* Media Query for Mobile Screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .combined-page {
+    gap: 20px;
+  }
+
+  .gl-gallery-j1 {
+    font-size: 32px;
+  }
+
+  .gl-gallery-hero {
+    height: 300px;
+    padding-top: 100px;
+  }
+
+  .gl-gallery-hero h1 {
+    font-size: 28px;
+  }
+
+  .gl-gallery-hero p {
+    font-size: 18px;
+  }
+
+  .gl-gallery-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .bl-blog-post {
+    flex-direction: column;
+  }
+
+  .bl-blog-image {
+    width: 100%;
+    height: 200px;
+  }
+
+  .bl-blog-title {
+    font-size: 20px;
+  }
+
+  .bl-blog-description {
+    font-size: 16px;
+  }
+
+  .bl-date-box {
+    padding: 3px;
+  }
+}
+
+/* Media Query for Small Mobile Screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .gl-gallery-hero {
+    font-size: 24px;
+    height: 200px;
+  }
+
+  .gl-gallery-hero h1 {
+    font-size: 24px;
+    padding-top: 80px;
+  }
+
+  .gl-gallery-hero p {
+    font-size: 16px;
+  }
+
+  .gl-gallery-image {
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+  }
+
+  .gl-gallery-grid {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .bl-blog-post {
+    padding: 10px;
+  }
+
+  .bl-blog-image {
+    height: 150px;
+  }
+
+  .bl-blog-title {
+    font-size: 18px;
+  }
+
+  .bl-blog-description {
+    font-size: 14px;
+  }
+
+  .bl-date-box {
+    font-size: 12px;
+  }
+
+  .bl-blog-content {
+    padding: 5px;
+  }
+}

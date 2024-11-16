@@ -1,4 +1,13 @@
+/* .form-scroll-container {
+    height: 100%;
+    overflow-y: auto;
+    padding-right: 15px; 
+} */
+
+
 .donation-form {
+    max-height: 90vh;
+    overflow-y: auto;
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
@@ -81,4 +90,91 @@ input[type="radio"] {
 
 .donate-button:hover {
     background-color: #4cae4c;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.modal h2 {
+    margin-bottom: 15px;
+}
+
+.modal button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal button:hover {
+    background-color: #0056b3;
+}
+
+
+@media (max-width: 575.98px) {
+    .preset-amounts button {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .name-fields, .card-fields {
+        flex-direction: column;
+    }
+
+    .name-fields div, .card-fields div {
+        width: 100%;
+    }
+
+    .donation-total {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .donate-button {
+        width: 100%;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .preset-amounts button {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .donation-form {
+        max-width: 500px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .donation-form {
+        max-width: 600px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .donation-form {
+        max-width: 700px;
+    }
 }

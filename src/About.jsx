@@ -100,14 +100,9 @@ const About = () => {
     <div class="content">
       <h3>Support Us and Change the Course of a Child's Life Today!</h3>
       <p>"The simplest acts of kindness are by far more powerful than a thousand heads bowing in prayer."</p>
-      <a href="#" class="donate-button">Donate</a>
+      <a href="/donate" class="donate-button">Donate</a>
     </div>
   </section>
-  {/* <footer>
-    <p>Copyright © 2024 Charity</p>
-    <p>Powered by Charity</p>
-  </footer> */}
-
     </div>
     </div>
   );

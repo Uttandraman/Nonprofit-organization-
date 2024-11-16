@@ -1,357 +1,278 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Home.css";
-import "animate.css";
-import { useNavigate } from "react-router-dom";
-import aboutUsImage from "./assets/2.jpeg.jpg";
+
 import G1 from "./assets/gallery-1.jpg";
 import G2 from "./assets/gallery-2.jpg";
 import G3 from "./assets/gallery-3.jpg";
 import G4 from "./assets/gallery-4.jpg";
 import G5 from "./assets/gallery-5.jpg";
 import G6 from "./assets/gallery-6.jpg";
-import L1 from "./assets/white.jpg";
 
-function Home() {
-  const navigate = useNavigate();
+const Home = () => {
+  const [cards, setCards] = useState([]);
+  const [events, setEvents] = useState([]);
+  const [causes, setCauses] = useState([]);
+  const [missionData, setMissionData] = useState([]);
+  const [blogPosts, setBlogPosts] = useState([]);
 
-  const handleNavigation = (path) => (e) => {
-    e.preventDefault();
-    navigate(path);
-  };
+  useEffect(() => {
+    // Fetching cards data from API
+    fetch("http://localhost:3000/api/homecard")
+      .then(response => response.json())
+      .then(data => setCards(data))
+      .catch(error => console.error("Error fetching cards:", error));
+
+    // Fetching events data from API
+    fetch("http://localhost:3000/api/event")
+      .then(response => response.json())
+      .then(data => setEvents(data))
+      .catch(error => console.error("Error fetching events:", error));
+
+    // Fetching causes data from API
+    fetch("http://localhost:3000/api/causes")
+      .then(response => response.json())
+      .then(data => setCauses(data))
+      .catch(error => console.error("Error fetching causes:", error));
+
+    // Fetching mission data from API
+    fetch("http://localhost:3000/api/mission")
+      .then(response => response.json())
+      .then(data => setMissionData(data))
+      .catch(error => console.error("Error fetching mission data:", error));
+
+    // Fetching blog posts data from API
+    fetch("http://localhost:3000/api/blog")
+      .then(response => response.json())
+      .then(data => setBlogPosts(data))
+      .catch(error => console.error("Error fetching blog posts:", error));
+  }, []);
 
   return (
-    <div className="home-wrapper">
-      <div className="charity-template">
-        <header>
-          <div
-            className="home-container"
-            style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between" }}
-          >
-            <div className="con" style={{ display: "flex", alignItems: "center" }}>
-              <img
-                src={L1}
-                style={{
-                  display: "block",
-                  marginTop: "10px",
-                  marginRight: "10px",
-                  width: "60px",
-                  height: "60px",
-                }}
-                alt="Logo"
-              />
-              <h1 className="animate_animated animate_fadeInDown" style={{ display: "inline" }}>
-                Hearts of Hope
-              </h1>
-            </div>
-            <nav className="p3" style={{ marginLeft: "auto" }}>
-              <ul style={{ display: "flex", listStyle: "none" }}>
-                <li style={{ margin: "0 10px" }}>
-                  <a href="/home" onClick={handleNavigation("/")}>Home</a>
-                </li>
-                <li style={{ margin: "0 10px" }}>
-                  <a href="/about" onClick={handleNavigation("/about")}>About</a>
-                </li>
-                <li style={{ margin: "0 10px" }}>
-                  <a href="/programs" onClick={handleNavigation("/programs")}>Programs</a>
-                </li>
-                <li style={{ margin: "0 10px" }}>
-                  <a href="/getin" onClick={handleNavigation("/getin")}>Get Involved</a>
-                </li>
-                <li style={{ margin: "0 10px" }}>
-                  <a href="/resource" onClick={handleNavigation("/resource")}>Resource</a>
-                </li>
-                <li style={{ margin: "0 10px" }}>
-                  <a href="#footer" onClick={handleNavigation("#footer")}>Contact</a>
-                </li>
-                <li style={{ margin: "0 10px" }}>
-                  <a href="/donate" onClick={handleNavigation("/donate")}>Donate</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </header>
-      <section id="home" class="hero11">
-        <div class="container">
-          <h2 class="animate_animated animate_fadeInLeft">
+    <div>
+      <section id="home" className="hero11">
+        <div className="container">
+          <h2 className="animate_animated animate_fadeInLeft">
             No one has ever become poor by giving.
           </h2>
-          <p class="animate_animated animate_fadeInRight">
+          <p className="animate_animated animate_fadeInRight">
             Hope is being able to see that there is light despite all of the
             darkness.
           </p>
           <a
-            href="#about"
-            class="btn animate_animated animatepulse animate_infinite"
+            href="#missionhome"
+            className="btn animate_animated animatepulse animate_infinite"
           >
             Learn More
           </a>
         </div>
       </section>
+      <section>
+        <div className="card-section">
+          <div className="container">
+            <div className="cards">
+              {cards.map((card, index) => (
+                <div key={index} className="card">
+                  <div className="icon">{card.icon}</div>
+                  <h3>{card.title}</h3>
+                  <p>{card.description}</p>
+                  <a href="/getin"><button>{card.buttonText}</button></a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+      <div>
+        <section>
+          <div className="charity-section">
+            <div className="events">
+              <h2 className="section-title">Upcoming Events</h2>
+              <div className="event-list">
+                {events.map((event, index) => (
+                  <div key={index} className="event-item">
+                    <div className="event-date">
+                      <span className="day">{event.date.split(" ")[0]}</span>
+                      <span className="month">{event.date.split(" ")[1]}</span>
+                    </div>
+                    <div className="event-details">
+                      <h3 className="event-title">{event.title}</h3>
+                      <p className="event-time">{event.time}</p>
+                      <p className="event-location">{event.location}</p>
+                      <p className="event-description">{event.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="featured-cause">
+              <h2 className="section-title">Featured Causes</h2>
+              <div className="cause-content">
+                <img
+                  src="http://hasan.themexlab.com/new/charity-home-html/img/causes/b1.jpg"
+                  alt="Child"
+                  className="cause-image"
+                />
+                <div className="cause-details">
+                  <h2>Charity For Education</h2>
+                  <p>
+                    <span className="cause-span">
+                      "Empower young minds through education to break the cycle
+                      of poverty and build a brighter future."
+                    </span>
+                  </p>
+                  <p className="cause-description">
+                    "Charity for Education focuses on providing essential
+                    educational resources and opportunities to underprivileged
+                    children. By supporting their learning journey, we empower
+                    them to break the cycle of poverty and build a brighter
+                    future. Join us in making a lasting impact on young minds."
+                  </p>
+                  <div className="progress-bar">
+                    <div className="progress" style={{ width: "85%" }}>
+                      85%
+                    </div>
+                  </div>
+                  <div className="donation-info">
+                    <span>Raised: $7890</span>
+                    <span>Goal: $9300</span>
+                  </div>
+                  <div className="cause-buttons">
+                    <a href="/donate"><button className="donate-button">Donate Now</button></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div className="app">
+            <h1 className="app-h1">Recent Causes</h1>
+            <div className="causes-container">
+              {causes.map((cause, index) => (
+                <div className="cause-a1" key={index}>
+                  <img src={cause.image} alt="Cause" className="cause-img" />
 
-      <section id="" class="about">
-        <div class="container1">
-          <div class="text-content animate_animated animate_fadeInUp">
-            <h2>Who <span class="p1">We</span> Are</h2>
+                  <div className="causeInfo">
+                    <h3 className="cause-h1">SPONSOR A CHILD TODAY</h3>
+                    <p className="cause-span">Raised: ${cause.raised}</p>
+                    <p className="cause-span">Goal: ${cause.goal}</p>
+                    <p>{cause.description}</p>
+                    <a href="/donate"><button className="button donate-now">
+                      &raquo; DONATE NOW
+                    </button></a>
+
+                    <button className="button donators">
+                      <span className="heart-icon">&#10084;</span> Donate: $
+                      {cause.donate}
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+        <section className="donate-section">
+          <div className="donate-overlay"></div>
+          <div className="donate-content">
+            <h3>Support Us and Change the Course of a Child's Life Today!</h3>
             <p>
-              Hearts of Hope was founded in 2020 with a mission to provide
-              support and resources to underprivileged communities worldwide.
-              Our journey began with a small group of dedicated volunteers who
-              believed in the power of compassion and collective action. Over
-              the years, we have grown into a robust organization, impacting
-              countless lives through our various programs in education,
-              healthcare, and sustainable development. At Hearts of Hope, we
-              strive to bring hope and change to those in need, fostering a
-              world where everyone has the opportunity to thrive and succeed.
-              Our mission is to empower individuals and communities by offering
-              aid, resources, and a supportive network, ensuring that hope is
-              always within reach.
+              "The simplest acts of kindness are by far more powerful than a
+              thousand heads bowing in prayer."
+            </p>
+            <a href="/donate" className="donate-button">
+              Donate
+            </a>
+          </div>
+        </section>
+
+        <section id="" className="gallery">
+          <div className="container3">
+            <h2 className="gallery-title">Gallery</h2>
+            <div className="gallery-images">
+              <img
+                src={G1}
+                alt="Gallery Image 1"
+                className="animate_animated animate_zoomIn"
+              />
+              <img
+                src={G2}
+                alt="Gallery Image 2"
+                className="animate_animated animatezoomIn animate_delay-1s"
+              />
+              <img
+                src={G3}
+                alt="Gallery Image 3"
+                className="animate_animated animatezoomIn animate_delay-2s"
+              />
+              <img
+                src={G4}
+                alt="Gallery Image 4"
+                className="animate_animated animatezoomIn animate_delay-3s"
+              />
+              <img
+                src={G5}
+                alt="Gallery Image 5"
+                className="animate_animated animatezoomIn animate_delay-4s"
+              />
+              <img
+                src={G6}
+                alt="Gallery Image 6"
+                className="animate_animated animatezoomIn animate_delay-5s"
+              />
+            </div>
+          </div>
+        </section>
+        <div className="section-container">
+          <div className="text-content">
+            <h1>"See the change you've inspired"!</h1>
+            <p>
+              "Visit our gallery to see the impact of your support, showcasing
+              moments of hope and transformation made possible by your
+              contributions."
             </p>
           </div>
-          <div class="image-content">
-            <img src={aboutUsImage} alt="About Us" />
-          </div>
-        </div>
-      </section>
-
-      <section id="" class="menu">
-        <div class="container2">
-          <h1 class="animate_animated animate_fadeInUp">Our Approach</h1>
-          <div class="menu-items">
-            <div class="menu-item animate_animated animate_zoomIn">
-              <h3>Vision & Mission</h3>
-              {/* <img src={m1}></img> */}
-              <p>
-                "At Heart of Hope, our mission is to empower communities and
-                uplift lives through compassionate support and sustainable
-                solutions. We envision a world where everyone has the
-                opportunity to thrive."
-              </p>
-            </div>
-            <div class="menu-item animate_animated animatezoomIn animate_delay-1s">
-              <h3>Community Engagement</h3>
-              <p>
-                "We believe in the power of community. Our approach centers on
-                engaging with local communities to understand their needs,
-                harness their strengths, and develop tailored solutions that
-                foster resilience and growth."
-              </p>
-            </div>
-            <div class="menu-item animate_animated animatezoomIn animate_delay-2s">
-              <h3>Sustainable Solutions</h3>
-              <p>
-                "Sustainability is at the core of our initiatives. We focus on
-                creating long-term solutions that promote self-sufficiency and
-                environmental stewardship, ensuring that our impact endures for
-                generations to come."
-              </p>
-            </div>
-            <div class="menu-item animate_animated animatezoomIn animate_delay-3s">
-              <h3>Transparency and Accountability</h3>
-              <p>
-                "We uphold the highest standards of transparency and
-                accountability. Our commitment to open communication and
-                diligent reporting ensures that every contribution is used
-                effectively and ethically."
-              </p>
-            </div>
-            <div class="menu-item animate_animated animatezoomIn animate_delay-4s">
-              <h3>Partnerships and Collaboration</h3>
-              <p>
-                "Collaboration is key to our success. By partnering with
-                like-minded organizations, government bodies, and community
-                leaders, we leverage collective expertise and resources to
-                maximize our impact."
-              </p>
-            </div>
-            <div class="menu-item animate_animated animatezoomIn animate_delay-5s">
-              <h3>Impact and Success Stories</h3>
-              <p>
-                "Our impact is best illustrated through the stories of those
-                we've helped. From providing educational opportunities to
-                transforming lives through healthcare initiatives, our success
-                stories reflect the heart and hope we strive to bring to every
-                individual and community we serve."
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="" class="gallery">
-        <div class="container3">
-          <h2 class="animate_animated animate_fadeInUp">Gallery</h2>
-          <div class="gallery-images">
-            <img
-              src={G1}
-              alt="Gallery Image 1"
-              class="animate_animated animate_zoomIn"
-            />
-            <img
-              src={G2}
-              alt="Gallery Image 2"
-              class="animate_animated animatezoomIn animate_delay-1s"
-            />
-            <img
-              src={G3}
-              alt="Gallery Image 3"
-              class="animate_animated animatezoomIn animate_delay-2s"
-            />
-            <img
-              src={G4}
-              alt="Gallery Image 4"
-              class="animate_animated animatezoomIn animate_delay-3s"
-            />
-            <img
-              src={G5}
-              alt="Gallery Image 5"
-              class="animate_animated animatezoomIn animate_delay-4s"
-            />
-            <img
-              src={G6}
-              alt="Gallery Image 6"
-              class="animate_animated animatezoomIn animate_delay-5s"
-            />
-          </div>
-        </div>
-      </section>
-      <section id="" class="blog">
-        <div class="container">
-          <h2 class="animate_animated animate_fadeInUp">
-            We <span class="p1">Need</span> Your Help
-          </h2>
-          <div class="blog-posts">
-            <div class="blog-post animate_animated animate_fadeInUp">
-              <img
-                src="https://th.bing.com/th?id=OIP.APu_TrsfCDS4VxkuXbALqwHaE6&w=306&h=203&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2"
-                alt="Blog Image 1"
-              />
-              <h3>The Silent Tragedy: Lives Lost to Hunger</h3>
-              <p>
-                In many parts of the world, children face the harsh reality of
-                hunger and malnutrition, leading to countless deaths daily. Join
-                us in our mission to provide essential nutrition and save
-                innocent lives. Lives Lost to Hunger. Your help can make a difference.
-              </p>
-              <a href="#" class="home-btn">
-                Read More
-              </a>
-            </div>
-            <div class="blog-post animate_animated animatefadeInUp animate_delay-1s">
-              <img
-                src="https://wallpaperaccess.com/full/2719941.jpg"
-                alt="Blog Image 2"
-              />
-              <h3>The Plight of the Elderly: Stranded on the Streets</h3>
-              <p>
-                In many cities, an increasing number of elderly individuals find
-                themselves without a home, forced to live on the streets. These
-                vulnerable seniors often lack access to basic necessities such
-                as food, shelter, and medical care, making their situation dire.
-              </p>
-              <a href="#" class="home-btn">
-                Read More
-              </a>
-            </div>
-            <div class="blog-post animate_animated animatefadeInUp animate_delay-2s">
-              <img
-                src="https://th.bing.com/th/id/OIP.pbP4eeGOyQN75IrJhegNbQHaEK?w=268&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
-                alt="Blog Image 3"
-              />
-              <h3>Empowering Lives: Your Contribution Can Make a Difference</h3>
-              <p>
-                Millions of families around the world are grappling with the
-                harsh realities of poverty. Basic needs like food, shelter, and
-                education remain out of reach, making daily survival a daunting
-                challenge
-              </p>
-              <a href="#" class="home-btn">
-                Read More
-              </a>
-            </div>
-            <div class="blog-post animate_animated animatefadeInUp animate_delay-3s">
-              <img
-                src="https://th.bing.com/th/id/OIP.ms8HHnfduFMgVZXV1isDdwHaE8?w=293&h=195&c=7&r=0&o=5&dpr=1.3&pid=1.7"
-                alt="Blog Image 4"
-              />
-              <h3>
-                The Growing Crisis: Lives Lost to Disease, Fever, and Mosquitoes
-              </h3>
-              <p>
-                Every year,countless lives are lost to preventable diseases,
-                fevers,and mosquito-borne illnesses. Malaria,dengue fever,and
-                other vector-borne diseases remain rampant in many parts of the
-                world.
-              </p>
-              <a href="#" class="home-btn">
-                Read More
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* <section className="contact1-form" id="contact1-form">
-      <h2>Get in touch</h2>
-      <p>Let's talk about your project</p>
-      <form>
-        <input className='home-input' type="text" placeholder="Your name" />
-        <input className="home-input" type="text" placeholder="Your phone number" />
-        <input className="home-input" type="email" placeholder="Your email" />
-        <textarea className='home-input' placeholder="Your message"></textarea>
-        <button type="submit">Submit</button>
-      </form>
-    </section> */}
-
-      <footer className='footer' id="footer">
-    <div class="footer-content">
-      {/* <div class="footer-section about">
-        <h2 class="logo-text"><span>HOH</span> Charity & Non-profit</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.
-        </p>
-        <a href="#">Read More</a>
-      </div> */}
-
-      <div class="footer-section links">
-        <h2>Who We Are</h2>
-        <ul>
-          <li><a href="#">About us</a></li>
-          <li><a href="#">Courses</a></li>
-          <li><a href="#">Testimonials</a></li>
-          <li><a href="#">Gallery</a></li>
-          <li><a href="#">FAQ</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-section contact-form">
-        <h2>Where We Work</h2>
-        <ul>
-          <li><span>Coimbatore TamilNadu </span></li>
-          <li><span>7373750804 - 9842750804</span></li>
-          <li><span>HOHcharity@gmail.com</span></li>
-          <li><span>Mon - Sat 09:00 - 17:00</span></li>
-        </ul>
-      </div>
-
-      <div class="footer-section social-media">
-        <h2>Follow Us</h2>
-       
-        <div class="socials">
-          <a href="#"><i class="fab fa-facebook"><img src="https://i.pinimg.com/736x/ee/93/32/ee933267f1290803739dd38bca4a9b25.jpg" alt="facebook"></img></i></a>
-          <a href="#"><i class="fab fa-twitter"><img src="https://img.freepik.com/premium-vector/twitter-x-icon_878233-1623.jpg" alt="twitter"></img></i></a>
-          <a href="#"><i class="fab fa-instagram"><img src="https://thumbs.dreamstime.com/z/black-white-instagram-logo-vector-ai-file-easily-editable-have-white-background-high-resolution-instagram-logo-138329686.jpg" alt="instagram" /></i></a>
-          <a href="#"><i class="fab fa-pinterest"><img src="https://i.pinimg.com/564x/fd/24/fe/fd24fe4adfd1e7d0ca36bc476b6b5005.jpg" alt="pinterest" /></i></a>
+          <a href="/gallery"><button className="donate-button">VIEW FULL GALLERY</button></a>
+          <div className="image-content"></div>
         </div>
       </div>
-    </div>
+      <section id="missionhome">
+        <div className="mission-container">
+          <h2 className="mission-heading">OUR MISSION</h2>
+          <div className="mission-content">
+            {missionData.map((mission, index) => (
+              <div key={index} className="mission-item">
+                <div className="mission-icon">{mission.icon}</div>
+                <div className="mission-text">
+                  <h3>{mission.title}</h3>
+                  <p>{mission.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-    <div class="footer-bottom">
-      Thiruvarutselvan  Uttandaraman  Uvalakshmi
-    </div>
-  </footer>
-    </div>
+      <section id="blog">
+        <div className="blog-container">
+          <div className="blog-content">
+            <h2>Latest News</h2>
+            <div className="blog-list">
+              {blogPosts.map((post, index) => (
+                <div key={index} className="blog-post">
+                  <img src={post.image} className="blog-image"></img>
+                  <div className="blog-content">
+                  <h3>{post.title}</h3>
+                  <p>{post.date}</p>
+                  <p>{post.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
-}
+};
 
 export default Home;

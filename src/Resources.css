@@ -1,260 +1,161 @@
 .resources-section1{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: url('./assets/newsbakcground.jpg') no-repeat center center;
-    background-size: cover;
-    color: #fff;
-    position: relative;
-    height: 250px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: url('https://borgenproject.org/wp-content/uploads/Fighting-Global-Poverty-with-Affordable-Housing.jpg') no-repeat center center;
+  background-size: cover;
+  color: #fff;
+  position: relative;
+  height: 650px;
 }
 
 .resources-section1::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0; 
-    background: rgba(0, 0, 0, 0.5);
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; 
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .resources-div1{
-    z-index: 1;
+  z-index: 1;
 }
 
 .news{
-    margin-left: 680px;
-    font-size: 50px;
-    font-family: 'Lato', sans-serif;
+  margin-left: 680px;
+  font-size: 50px;
+  font-family: 'Lato', sans-serif;
 }
 
 .card1{
-    margin-top: 30px;
-    margin-left: 100px;
-    position: relative;
-    width: 400px;
-    background-color: white;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+  margin-left: 100px;
+  position: relative;
+  width: 400px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card1-image{
-    width: 100%;
-    height: 250px;
+  width: 100%;
+  height: 250px;
 }
 
 .card1-content{
-    padding: 20px;
+  padding: 20px;
 }
 
 .card1-date {
-    background-color: rgb(1, 152, 1);
-    color: white;
-    padding: 20px 5px;
-    font-size: 14px;
-    font-weight: bold;
-    position: absolute;
-    top: 220px;
-    right: 35px;
-  }
+  background-color: rgb(1, 152, 1);
+  color: white;
+  padding: 20px 5px;
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+  top: 220px;
+  right: 35px;
+}
 
 .card1-head{
-    margin-left: 10px;
-    font-family: 'Lato', sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    color: #888888;
+  margin-left: 10px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #888888;
 }
 
 .card1-title{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 24px;
-    margin: 10px 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  margin: 10px 0;
 }
 
 .card1-text{
-    font-family: 'Lato', sans-serif;
-    font-size: 16px;
-    color: #555555;
-    margin: 10px 0;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  color: #555555;
+  margin: 10px 0;
 }
 
 .card2 {
-    position: relative;
-    width: 100%;
-    max-width: 400px;
-    height: 500px;
-    margin-top: 40px;
-    margin-left: 100px;
-  }
-
-.card2::before{
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0; 
-  background: rgba(0, 0, 0, 0.5);
-}
-  
-  .card2 img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .text-block {
-    position: absolute;
-    bottom: 20px;
-    left: 30px;
-    color: white;
-  }
-  
-  .text-block p {
-    font-family: 'Lato', sans-serif;
-    margin: 5px 0;
-    font-size: 1.75rem;
-    font-weight: bold;
-  }
-  
-  .text-block span {
-    font-family: 'Lato', sans-serif;
-    display: inline-block;
-    margin-bottom: 5px;
-    font-size: 0.875rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-left: 10px;
-  }
-
-  .card3 {
-    position: relative;
-    width: 100%;
-    max-width: 400px;
-    height: 250px;
-    margin-top: -1048px;
-    margin-left: 545px;
-  }
-
-  .card3::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0; 
-    background: rgba(0, 0, 0, 0.5);
-  }
-    
-  .card3 img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .card3-text {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-    color: white;
-    text-align: center;
-  }
-  
-  .card3-text p {
-    font-family: 'Montserrat', sans-serif;
-    margin: 30px 0;
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-
-  .card3 a{
-    text-decoration: none;
-    color: white;
-    font-family: 'Lato', sans-serif;
-  }
-  
-  .card4{
-    margin-top: 20px;
-    margin-left: 545px;
-    position: relative;
-    width: 400px;
-    background-color: white;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.card4-image{
-    width: 100%;
-    height: 250px;
-}
-
-.card4-content{
-    padding: 20px;
-}
-
-.card4-date {
-    background-color: rgb(1, 152, 1);
-    color: white;
-    padding: 20px 5px;
-    font-size: 14px;
-    font-weight: bold;
-    position: absolute;
-    top: 220px;
-    right: 35px;
-  }
-
-.card4-head{
-    margin-left: 10px;
-    font-family: 'Lato', sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    color: #888888;
-}
-
-.card4-title{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 24px;
-    margin: 10px 0;
-}
-
-.card4-text{
-    font-family: 'Lato', sans-serif;
-    font-size: 16px;
-    color: #555555;
-    margin: 10px 0;
-}
-
-.card5 {
   position: relative;
   width: 100%;
   max-width: 400px;
-  height: 250px;
-  margin-top: 20px;
-  margin-left: 545px;
+  height: 500px;
+  margin-top: 40px;
+  margin-left: 100px;
 }
 
-.card5::before{
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0; 
-  background: rgba(0, 0, 0, 0.5);
+.card2::before{
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0; 
+background: rgba(0, 0, 0, 0.5);
 }
-  
-.card5 img {
+
+.card2 img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.card5-text {
+.text-block {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  color: white;
+}
+
+.text-block p {
+  font-family: 'Lato', sans-serif;
+  margin: 5px 0;
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.text-block span {
+  font-family: 'Lato', sans-serif;
+  display: inline-block;
+  margin-bottom: 5px;
+  font-size: 0.875rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-left: 10px;
+}
+
+.card3 {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  height: 250px;
+  margin-top: -1048px;
+  margin-left: 545px;
+}
+
+.card3::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; 
+  background: rgba(0, 0, 0, 0.5);
+}
+  
+.card3 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card3-text {
   position: absolute;
   bottom: 20px;
   left: 20px;
@@ -263,27 +164,126 @@
   text-align: center;
 }
 
-.card5-text p {
+.card3-text p {
   font-family: 'Montserrat', sans-serif;
   margin: 30px 0;
   font-size: 1.5rem;
   font-weight: bold;
-  margin-top: -10px;
 }
 
-.card5 a{
+.card3 a{
   text-decoration: none;
   color: white;
   font-family: 'Lato', sans-serif;
 }
 
-.card6 {
+.card4{
+  margin-top: 20px;
+  margin-left: 545px;
   position: relative;
+  width: 400px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card4-image{
   width: 100%;
-  max-width: 400px;
-  height: 500px;
-  margin-top: -1052px;
-  margin-left: 990px;
+  height: 250px;
+}
+
+.card4-content{
+  padding: 20px;
+}
+
+.card4-date {
+  background-color: rgb(1, 152, 1);
+  color: white;
+  padding: 20px 5px;
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+  top: 220px;
+  right: 35px;
+}
+
+.card4-head{
+  margin-left: 10px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #888888;
+}
+
+.card4-title{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.card4-text{
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  color: #555555;
+  margin: 10px 0;
+}
+
+.card5 {
+position: relative;
+width: 100%;
+max-width: 400px;
+height: 250px;
+margin-top: 20px;
+margin-left: 545px;
+}
+
+.card5::before{
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0; 
+background: rgba(0, 0, 0, 0.5);
+}
+
+.card5 img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.card5-text {
+position: absolute;
+bottom: 20px;
+left: 20px;
+right: 20px;
+color: white;
+text-align: center;
+}
+
+.card5-text p {
+font-family: 'Montserrat', sans-serif;
+margin: 30px 0;
+font-size: 1.5rem;
+font-weight: bold;
+margin-top: -10px;
+}
+
+.card5 a{
+text-decoration: none;
+color: white;
+font-family: 'Lato', sans-serif;
+}
+
+.card6 {
+position: relative;
+width: 100%;
+max-width: 400px;
+height: 500px;
+margin-top: -1052px;
+margin-left: 990px;
 }
 
 .card6::before{
@@ -297,83 +297,174 @@ background: rgba(0, 0, 0, 0.5);
 }
 
 .card6 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+width: 100%;
+height: 100%;
+object-fit: cover;
 }
 
 .card6-text {
-  position: absolute;
-  bottom: 20px;
-  left: 30px;
-  color: white;
+position: absolute;
+bottom: 20px;
+left: 30px;
+color: white;
 }
 
 .card6-text p {
-  font-family: 'Lato', sans-serif;
-  margin: 5px 0;
-  font-size: 1.75rem;
-  font-weight: bold;
+font-family: 'Lato', sans-serif;
+margin: 5px 0;
+font-size: 1.75rem;
+font-weight: bold;
 }
 
 .card6-text span {
-  font-family: 'Lato', sans-serif;
-  display: inline-block;
-  margin-bottom: 5px;
-  font-size: 0.875rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-left: 10px;
+font-family: 'Lato', sans-serif;
+display: inline-block;
+margin-bottom: 5px;
+font-size: 0.875rem;
+letter-spacing: 2px;
+text-transform: uppercase;
+margin-left: 10px;
 }
 
 .card7{
-  margin-top: 40px;
-  margin-left: 990px;
-  position: relative;
-  width: 400px;
-  background-color: white;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+margin-top: 40px;
+margin-left: 990px;
+position: relative;
+width: 400px;
+background-color: white;
+overflow: hidden;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card7-image{
-  width: 100%;
-  height: 250px;
+width: 100%;
+height: 250px;
 }
 
 .card7-content{
-  padding: 20px;
+padding: 20px;
 }
 
 .card7-date {
-  background-color: rgb(1, 152, 1);
-  color: white;
-  padding: 20px 5px;
-  font-size: 14px;
-  font-weight: bold;
-  position: absolute;
-  top: 220px;
-  right: 35px;
+background-color: rgb(1, 152, 1);
+color: white;
+padding: 20px 5px;
+font-size: 14px;
+font-weight: bold;
+position: absolute;
+top: 220px;
+right: 35px;
 }
 
 .card7-head{
-  margin-left: 10px;
-  font-family: 'Lato', sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  color: #888888;
+margin-left: 10px;
+font-family: 'Lato', sans-serif;
+font-weight: 700;
+font-size: 14px;
+color: #888888;
 }
 
 .card7-title{
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 24px;
-  margin: 10px 0;
+font-family: 'Montserrat', sans-serif;
+font-weight: 700;
+font-size: 24px;
+margin: 10px 0;
 }
 
 .card7-text{
-  font-family: 'Lato', sans-serif;
-  font-size: 16px;
-  color: #555555;
-  margin: 10px 0;
+font-family: 'Lato', sans-serif;
+font-size: 16px;
+color: #555555;
+margin: 10px 0;
+}
+
+@media screen and (max-width: 576px) {
+  .resources-section1 {
+    height: auto;
+    padding: 10px;
+  }
+
+  .news {
+    font-size: 28px;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .card1, .card2, .card3, .card4, .card5, .card6, .card7 {
+    max-width: 100%;
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  .card1-date, .card4-date, .card7-date {
+    top: 200px;
+    right: 10px;
+  }
+
+  .card3, .card5 {
+    margin-top: 20px;
+    margin-left: 0;
+  }
+
+  .text-block p {
+    font-size: 1.25rem;
+  }
+
+  .card6-text p {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .news {
+    font-size: 32px;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .card1, .card2, .card3, .card4, .card5, .card6, .card7 {
+    max-width: 90%;
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  .card3, .card5 {
+    margin-left: 0;
+  }
+
+  .card6 {
+    margin-top: 20px;
+    margin-left: 0;
+  }
+
+  .text-block p {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .news {
+    font-size: 36px;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .card1, .card2, .card3, .card4, .card5, .card6, .card7 {
+    max-width: 400px;
+    margin-left: 20px;
+  }
+
+  .card3 {
+    margin-top: 20px;
+  }
+
+  .card5, .card6, .card7 {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .card1, .card2, .card4, .card5, .card6, .card7 {
+    max-width: 380px;
+  }
 }
